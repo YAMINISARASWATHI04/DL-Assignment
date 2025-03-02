@@ -17,9 +17,9 @@ The dataset is automatically downloaded using KaggleHub:
 
 ## Model Training
 The training script supports:
-- Different hidden layer configurations ([128,64], [256,128,64], [512,256,128,64])
+- Different hidden layer configurations ([128,64], [128,64,32], [64,32])
 - Activation functions: ReLU and Sigmoid
-- Adam optimizer with backpropagation
+- Optimizers :Adam,RMSProp,SGD,MGD,NGD with backpropogation
 - Xavier weight initialization
 
 ### To train the model, run:
@@ -50,7 +50,7 @@ Observations:
 - Functions are modularized for training and evaluation.
 - Code follows best practices with clear documentation and comments.
 - Training and evaluation logic is separated for better maintainability.
-## Conclusion
+# Conclusion
 Based on extensive experimentation on the Fashion MNIST dataset, I identified the best-performing hyperparameter configurations. These configurations demonstrated strong generalization and are recommended for use on new datasets:
 ## 1
 Hidden Layers: [128, 64] | Activation: ReLU | Optimizer: RMSprop
@@ -65,10 +65,10 @@ Hidden Layers: [64, 32] | Activation: ReLU | Optimizer: Adam
 Test Accuracy: 86.85%
 Adam provides a balance between speed and accuracy with efficient gradient updates.
 ## Key Learnings
-ReLU Activation significantly outperforms Sigmoid due to the vanishing gradient problem.
-Optimizers Matter: RMSprop, Adam, and Nesterov Momentum showed superior performance.
-Network Depth: Models with 2-3 hidden layers performed best, while deeper architectures provided diminishing returns.
-Batch Size & Learning Rate: A batch size of 32 with lr = 0.001 worked well across all configurations.
-These findings can guide model selection for similar classification tasks, improving both performance and efficiency.
+- ReLU Activation significantly outperforms Sigmoid due to the vanishing gradient problem.
+- Optimizers Matter: RMSprop, Adam, and Nesterov Momentum showed superior performance.
+- Network Depth: Models with 2-3 hidden layers performed best, while deeper architectures provided diminishing returns.
+- Batch Size & Learning Rate: A batch size of 32 with lr = 0.001 worked well across all configurations.
+- These findings can guide model selection for similar classification tasks, improving both performance and efficiency.
 
 
