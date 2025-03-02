@@ -50,3 +50,26 @@ Observations:
 - Functions are modularized for training and evaluation.
 - Code follows best practices with clear documentation and comments.
 - Training and evaluation logic is separated for better maintainability.
+## Conclusion
+Based on extensive experimentation on the Fashion MNIST dataset, we identified the best-performing hyperparameter configurations. These configurations demonstrated strong generalization and are recommended for use on new datasets:
+
+Hidden Layers: [128, 64] | Activation: ReLU | Optimizer: RMSprop
+
+Test Accuracy: 87.00%
+RMSprop adapts learning rates effectively, making it suitable for different datasets.
+Hidden Layers: [128, 64, 32] | Activation: ReLU | Optimizer: Nesterov Momentum
+
+Test Accuracy: 87.11%
+Nesterov Momentum enhances stability and improves convergence.
+Hidden Layers: [64, 32] | Activation: ReLU | Optimizer: Adam
+
+Test Accuracy: 86.85%
+Adam provides a balance between speed and accuracy with efficient gradient updates.
+## Key Learnings
+ReLU Activation significantly outperforms Sigmoid due to the vanishing gradient problem.
+Optimizers Matter: RMSprop, Adam, and Nesterov Momentum showed superior performance.
+Network Depth: Models with 2-3 hidden layers performed best, while deeper architectures provided diminishing returns.
+Batch Size & Learning Rate: A batch size of 32 with lr = 0.001 worked well across all configurations.
+These findings can guide model selection for similar classification tasks, improving both performance and efficiency.
+
+
